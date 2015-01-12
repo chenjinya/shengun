@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, 
+            initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, 
+            user-scalable=no">
+<title>百度贴吧-关于"棍状物"的羞羞测试</title>
+<link href="favicon.ico" rel="icon" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="css/base.css">
+ <script src="js/zepto.min.js"></script>
+    <script src="js/zepto.fx.js"></script>
+    <style>
+        .Jinya_orange{
+            background: #f2b63c;
+            border-color: #f0ad24 #eba310 #c5880d;
+            background-image: -webkit-linear-gradient(top, #f8da9c 0%, #f5c462 70%, #f2b63c 100%);
+            background-image: -moz-linear-gradient(top, #f8da9c 0%, #f5c462 70%, #f2b63c 100%);
+            background-image: -o-linear-gradient(top, #f8da9c 0%, #f5c462 70%, #f2b63c 100%);
+            background-image: linear-gradient(to bottom, #f8da9c 0%, #f5c462 70%, #f2b63c 100%);
+        }
+        .Jinya_process{
+            -webkit-transition: width .4s ease-in-out;
+            -moz-transition: width .4s ease-in-out;
+            -ms-transition: width .4s ease-in-out;
+            -o-transition: width .4s ease-in-out;
+            transition: width .4s ease-in-out;
+        }
+        .Jinya_stripes{
+            -webkit-background-size: 30px 30px;
+            -moz-background-size: 30px 30px;
+            background-size: 30px 30px;
+            background-image: -webkit-gradient(linear, left top, right bottom,
+            color-stop(.25, rgba(255, 255, 255, .15)), color-stop(.25, transparent),
+            color-stop(.5, transparent), color-stop(.5, rgba(255, 255, 255, .15)),
+            color-stop(.75, rgba(255, 255, 255, .15)), color-stop(.75, transparent),
+            to(transparent));
+            background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+            transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+            transparent 75%, transparent);
+            background-image: -moz-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+            transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+            transparent 75%, transparent);
+            background-image: -ms-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+            transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+            transparent 75%, transparent);
+            background-image: -o-linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+            transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+            transparent 75%, transparent);
+            background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
+            transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
+            transparent 75%, transparent);
+            -webkit-animation: Jinya_animate-stripes 3s linear infinite;
+            -moz-animation: Jinya_animate-stripes 3s linear infinite;
+        }
+        @-webkit-keyframes Jinya_animate-stripes {
+            0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+        }
+        @-moz-keyframes Jinya_animate-stripes {
+            0% {background-position: 0 0;} 100% {background-position: 60px 0;}
+        }
+        .Jinya_gray{
+            background-image: -webkit-linear-gradient(top, #f0f0f0 0%, #dbdbdb 70%, #cccccc 100%);
+            background-image: -moz-linear-gradient(top, #f0f0f0 0%, #dbdbdb 70%, #cccccc 100%);
+            background-image: -o-linear-gradient(top, #f0f0f0 0%, #dbdbdb 70%, #cccccc 100%);
+            background-image: linear-gradient(to bottom, #f0f0f0 0%, #dbdbdb 70%, #cccccc 100%);
+            -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        #Jinya_loading_process_wrap{
+            position: absolute;
+            color:#FFF;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            margin: auto;
+            width:80%;
+            height:40px;
+            z-index: 9999999;
+        }
+        #Jinya_loading_process_tip{text-align: center; margin-bottom:4px;}
+        #Jinya_loading_process_background{
+            background: #ebebeb;
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+            border-radius: 10px;
+            position: absolute;
+            width:100%;
+            height:20px;}
+        #Jinya_loading_process_body{
+            width:0px;
+            border-radius: inherit;
+            height:20px;
+            line-height: 20px;
+            font-size:12px;
+            text-align: center;
+            box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        .index_image{position: absolute; top:0;  z-index:1;}
+        .back_image{position: absolute; top:0;  z-index:3;}
+        .finger_image{position: absolute; top:0;  z-index:4;}
+        .scan_image{position: absolute; top:0;  z-index:3;}
+        .result_image{position: absolute; top:0;  z-index:5;}
+        #buttonWrap{width:100%;position: absolute; top:0; display: none;  z-index:9999;}
+        #buttonWrap .btns{ border:0; background:none;display:block; width:130px; height:50px; float:left; float: left;}
+        #buttonWrap .restart{ margin-left:8%;  }
+        #buttonWrap .share{margin-left:12%;  }
+        .forbidden_wrap{background:#FFF; opacity: 0; position: absolute; width: 100%; height: 100%;z-index: 9; }
+        .random_forums{display: none; position: absolute; z-index: 9; text-align:center;width:100%; height:65px;}
+        .random_forums a{ margin:5px;font-size:14px; padding:8px;font-weight:bold; color:#FFF; background: #e04c34;}
+
+
+    </style>
+</head>
+<body scoll=no>
+<div id="Jinya_loading_process_wrap">
+    <div id="Jinya_loading_process_tip"><img width=100 src="./img/avatar.png"/></div>
+    <div id="Jinya_loading_process_tip">加载中...</div>
+    <div id="Jinya_loading_process_background">
+        <div id="Jinya_loading_process_body" class="Jinya_stripes Jinya_process Jinya_orange"></div>
+    </div>
+
+</div>
+
+<div id="container">
+
+    <div id="leftCounter" class="left_counter"></div>
+    <div id="rightCounter" class="right_counter">
+
+    </div>
+
+    <div id="gameStage" class="game_stage">
+        <div id="forums_go" class="random_forums">
+            <a>美女吧</a>
+        </div>
+        <div id="buttonWrap">
+
+            <a class="btns restart j_restart"></a>
+            <a class="btns share j_share"></a>
+        </div>
+
+    </div>
+
+    <div id="footer" class="footer">copyright &copy; 2014 <a href="http://tieba.baidu.com?fr=washbear">百度贴吧 烧小姐胁迫金亚哈制作</a></div>
+</div>
+
+<script type="text/javascript" src="js/weixin.js"></script>
+
+    <script type="text/javascript" src="js/loading.js"></script>
+<script type="text/javascript" src="js/JinyaRun.js"></script>
+
+<div style="display:none;" ><script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9d4dd467b5f5e9013bd1814f5aaf5325' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+</div>
+</body>
+</html>
